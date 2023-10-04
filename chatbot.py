@@ -22,10 +22,10 @@ state = 0
 tmp = 0
 document = 'none'
 messages = [{"role": "system", "content": "You are an intelligent assistant."}]
-BOT_USERNAME = '@SahandChatBot'
-BOT_TOKEN = "6358971821:AAEgeHx1TysBQjx2zEcKXo0WQCeN7bsvUYk"
+BOT_USERNAME = ""  # Insert your bot username e.g. @mybot
+BOT_TOKEN = ""  # Insert your bot token from botfather
 bot = telebot.TeleBot(BOT_TOKEN)
-openai_api_key = "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"
+openai_api_key = ""  # Insert your openai api key. Make sure you have enough credit
 openai.api_key = openai_api_key
 llm = OpenAI(openai_api_key=openai_api_key)
 memory = ConversationBufferMemory(memory_key="chat_history")
@@ -417,11 +417,11 @@ def receive_file(message: Message):
             base_url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendDocument"
             result_file = open(result_file_name, "rb")
             parameters = {
-                "chat_id" : message.chat.id,
-                "caption" : ""
+                "chat_id": message.chat.id,
+                "caption": ""
             }
             files = {
-                "document" : result_file
+                "document": result_file
             }
 
             bot.send_document(chat_id=message.chat.id,

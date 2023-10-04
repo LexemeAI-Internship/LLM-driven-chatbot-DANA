@@ -6,7 +6,7 @@ You can summarize your files, ask questions about them or have interactive chat 
 ## Features
 - Conversation: Have an interactive chat with our GPT-3.5-turbo chat bot with 16k tokens limit
 - Brief summarize: Summarize your TXT or PDF files in a few couple of paragraphs
-- Comprehensive summarize: Summarize your TXT or PDF files with up to 150 pages written in English and with up to 50 pages written in Persian. You can choose in how many pages you want to summarize it in English and Persian.
+- Comprehensive summarize: Comprehensively summarize your TXT or PDF files, with a maximum of 150 pages in English and up to 50 pages in Persian. You can choose the number of pages for the summary in both English and Persian.
 - Question-Answering(QA): Send your TXT of PDF files without any limit in number of pages and ask your questions about the context of your file
 
 ## Installation

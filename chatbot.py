@@ -1,4 +1,5 @@
 import tiktoken
+import os
 from openai.error import RateLimitError
 import openai
 import requests
@@ -17,15 +18,24 @@ from langchain.schema import Document
 import numpy as np
 from sklearn.cluster import KMeans
 from langchain.chat_models import ChatOpenAI
+from telebot import apihelper
+# apihelper.proxy = {'http': 'https://127.0.0.1:10809'}
+
+# Comment or Change lines 25 to 29 if you use another configs
+http_proxy = "http://127.0.0.1:10809"
+os.environ['http_proxy'] = http_proxy
+os.environ['HTTP_PROXY'] = http_proxy
+os.environ['https_proxy'] = http_proxy
+os.environ['HTTPS_PROXY'] = http_proxy
 
 state = 0
 tmp = 0
 document = 'none'
 messages = [{"role": "system", "content": "You are an intelligent assistant."}]
-BOT_USERNAME = ""  # Insert your bot username e.g. @mybot
-BOT_TOKEN = ""  # Insert your bot token from botfather
+BOT_USERNAME = '@SahandChatBot'
+BOT_TOKEN = "6358971821:AAEgeHx1TysBQjx2zEcKXo0WQCeN7bsvUYk"
 bot = telebot.TeleBot(BOT_TOKEN)
-openai_api_key = ""  # Insert your openai api key. Make sure you have enough credit
+openai_api_key = "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"
 openai.api_key = openai_api_key
 llm = OpenAI(openai_api_key=openai_api_key)
 memory = ConversationBufferMemory(memory_key="chat_history")
@@ -417,11 +427,11 @@ def receive_file(message: Message):
             base_url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendDocument"
             result_file = open(result_file_name, "rb")
             parameters = {
-                "chat_id": message.chat.id,
-                "caption": ""
+                "chat_id" : message.chat.id,
+                "caption" : ""
             }
             files = {
-                "document": result_file
+                "document" : result_file
             }
 
             bot.send_document(chat_id=message.chat.id,

@@ -33,9 +33,9 @@ tmp = 0
 document = 'none'
 messages = [{"role": "system", "content": "You are an intelligent assistant."}]
 BOT_USERNAME = '@SahandChatBot'
-BOT_TOKEN = "6358971821:AAEgeHx1TysBQjx2zEcKXo0WQCeN7bsvUYk"  # insert your bot token
+BOT_TOKEN = ""  # insert your bot token
 bot = telebot.TeleBot(BOT_TOKEN)
-openai_api_key = "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"  # insert your openai api key
+openai_api_key = ""  # insert your openai api key
 openai.api_key = openai_api_key
 llm = OpenAI(openai_api_key=openai_api_key)
 memory = ConversationBufferMemory(memory_key="chat_history")
